@@ -1,7 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import DisplayDiceResult from '../components/containers/DisplayDiceResult';
 import './Tab1.css';
-import NavButton from '../buttons/navButton';
+import NavButton from '../components/buttons/NavButton';
+import React from 'react';
 
 const Tab1: React.FC = () => {
   return (

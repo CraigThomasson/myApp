@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ExploreContainer.css';
-import BaseButton from '../../buttons/baseButton';
+import BaseButton from '../buttons/BaseButton';
 import ErrorPopup from '../popups/ErrorPopup';
 import rollDice from '../../scripts/rollDice';
 import './DisplayDiceResult.css';

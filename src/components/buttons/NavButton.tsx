@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import BaseButton from './baseButton';
+import BaseButton from './BaseButton';
 
 interface NavButtonProps {
     to: string;
