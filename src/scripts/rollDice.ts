@@ -1,6 +1,4 @@
-function rollDice(numberOfDice: number = 1, diceSize: number = 6): number {
-    numberOfDice = numberOfDice || 1; 
-    diceSize = diceSize || 6;
+function rollDice(numberOfDice: number, diceSize: number): number {
     if (typeof numberOfDice !== 'number' || typeof diceSize !== 'number') {
         throw new Error('Both numberOfDice and diceSize must be numbers');
     }
@@ -10,7 +8,7 @@ function rollDice(numberOfDice: number = 1, diceSize: number = 6): number {
 
     let total = 0;
     for (let i = 0; i < numberOfDice; i++) {
-        let currentTotal =  Math.floor(Math.random() * diceSize) + 1;
+        let currentTotal = Math.floor(Math.random() * diceSize) + 1;
         total += currentTotal;
     }
     return total;
