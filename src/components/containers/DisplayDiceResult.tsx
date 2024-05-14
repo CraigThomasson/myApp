@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ExploreContainer.css';
 import BaseButton from '../../buttons/baseButton';
+import ErrorPopup from '../popups/ErrorPopup';
 import rollDice from '../../scripts/rollDice';
 import './DisplayDiceResult.css';
 
@@ -9,9 +10,21 @@ interface ContainerProps {
 }
 
 const DisplayDiceResult: React.FC<ContainerProps> = ({ name }) => {
-    const [number, setNumber] = useState(0);
-    const [diceSize, setDiceSize] = useState('6');
-    const [numberOfDice, setNumberOfDice] = useState('1');
+    const [number, setNumber] = useState<number | null>(null);
+    const [diceSize, setDiceSize] = useState<string>('6');
+    const [numberOfDice, setNumberOfDice] = useState<string>('1');
+    const [isErrorVisible, setIsErrorVisible] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+
+    const handleRollDice = () => {
+        try {
+            const result = rollDice(Number(numberOfDice), Number(diceSize));
+            setNumber(result);
+        } catch (error) {
+            setErrorMessage(error.message);
+            setIsErrorVisible(true);
+        }
+    };
 
     return (
         <div className="container">
@@ -25,9 +38,14 @@ const DisplayDiceResult: React.FC<ContainerProps> = ({ name }) => {
                     Number of Dice:
                     <input type="number" value={numberOfDice} onChange={e => setNumberOfDice(e.target.value)} />
                 </label>
-                <BaseButton onClick={() => setNumber(rollDice(Number(numberOfDice), Number(diceSize)))} text='Roll Dice' />
+                <BaseButton onClick={handleRollDice} text='Roll Dice' />
             </div>
-            <p>{number}</p>
+            {number !== null && <p>Result: {number}</p>}
+            <ErrorPopup
+                message={errorMessage}
+                isVisible={isErrorVisible}
+                onClose={() => setIsErrorVisible(false)}
+            />
         </div>
     );
 };
