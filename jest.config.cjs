@@ -1,7 +1,14 @@
 module.exports = {
-  transform: {
-    '^.+\\.tsx?$': ['babel-jest', { configFile: './babel.config.cjs' }],
-  },
+  preset: 'ts-jest',
   testEnvironment: 'node',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'js'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.js$': 'babel-jest'
+  },
+  testMatch: ['**/src/scripts/**/*.test.ts', '**/?(*.)+(spec|test).[tj]s'],
+  moduleDirectories: ['node_modules', 'src'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1'
+  }
 };
