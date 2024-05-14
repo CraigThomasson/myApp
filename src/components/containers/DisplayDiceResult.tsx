@@ -19,13 +19,13 @@ const DisplayDiceResult: React.FC<ContainerProps> = ({ name }) => {
             <div>
                 <label>
                     Dice Size:
-                    <input type="number" value={diceSize} onChange={e => setDiceSize(e.target.value)} /> {/* No need to check if the input value is empty */}
+                    <input type="number" value={diceSize} onChange={e => setDiceSize(e.target.value)} />
                 </label>
                 <label>
                     Number of Dice:
-                    <input type="number" value={numberOfDice} onChange={e => setNumberOfDice(e.target.value)} /> {/* No need to check if the input value is empty */}
+                    <input type="number" value={numberOfDice} onChange={e => setNumberOfDice(e.target.value)} />
                 </label>
-                <BaseButton onClick={() => setNumber(rollDice(Number(numberOfDice), Number(diceSize)))} text='Roll Dice' /> {/* Convert the inputs to numbers here */}
+                <BaseButton onClick={() => setNumber(rollDice(Number(numberOfDice), Number(diceSize)))} text='Roll Dice' />
             </div>
             <p>{number}</p>
         </div>

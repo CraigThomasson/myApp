@@ -8,8 +8,8 @@
     padding: 20px;
     background-color: black;
     color: white;
-    height: 100vh; /* This will make the container take the full height of the viewport */
-    box-sizing: border-box; /* This makes sure the padding is included in the height */
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .container strong {
