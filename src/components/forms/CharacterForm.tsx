@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import SubmitButton from "../buttons/SubmitButton";
+import "./CharacterForm.css";
 
 interface CharacterFormProps {
     onSubmit: (character: any) => void;
