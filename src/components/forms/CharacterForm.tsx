@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import SubmitButton from "../buttons/SubmitButton";
 
 interface CharacterFormProps {
     onSubmit: (character: any) => void;
@@ -65,6 +66,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
                 Charisma:
                 <input type="number" value={charisma} onChange={e => setCharisma(Number(e.target.value))} />
             </label>
+            <SubmitButton text='Create Character' onSubmit={handleSubmit} />
         </form>
     );
 };
