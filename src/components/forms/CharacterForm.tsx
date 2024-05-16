@@ -1,10 +1,10 @@
 import React, { useState} from "react";
 
-interface CharacterF0rmProps {
+interface CharacterFormProps {
     onSubmit: (character: any) => void;
 }
 
-const CharacterForm: React.FC<CharacterF0rmProps> = ({ onSubmit }) => {
+const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
     const [name, setName] = useState<string>('');
     const [characterClass, setCharacterClass] = useState<string>('');
     const [characterRace, setCharacterRace] = useState<string>('');
