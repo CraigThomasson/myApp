@@ -10,7 +10,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
     const [name, setName] = useState<string>('');
     const [characterClass, setCharacterClass] = useState<string>('');
     const [characterRace, setCharacterRace] = useState<string>('');
-    const [stenght, setStenght] = useState<number>(0);
+    const [strength, setStrength] = useState<number>(0);
     const [dexterity, setDexterity] = useState<number>(0);
     const [constitution, setConstitution] = useState<number>(0);
     const [intelligence, setIntelligence] = useState<number>(0);
@@ -23,7 +23,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
             name,
             characterClass,
             characterRace,
-            stenght,
+            strength,
             dexterity,
             constitution,
             intelligence,
@@ -45,7 +45,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
             </label>
             <label>
                 stenght:
-                <input type="number" value={stenght} onChange={e => setStenght(Number(e.target.value))} />
+                <input type="number" value={strength} onChange={e => setStrength(Number(e.target.value))} />
             </label>
             <label>
                 Dexterity:
