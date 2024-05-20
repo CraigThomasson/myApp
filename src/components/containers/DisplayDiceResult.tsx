@@ -27,7 +27,7 @@ const DisplayDiceResult: React.FC<ContainerProps> = ({ name }) => {
     };
 
     return (
-        <div className="container">
+        <div className="dice-container">
             <strong>{name}</strong>
             <div>
                 <label>

@@ -34,6 +34,7 @@ const CharacterForm: React.FC<CharacterFormProps> = ({ onSubmit }) => {
     };
 
     return (
+        console.log("character form loaded"),
         <form onSubmit={handleSubmit}>
             <label>
                 Name:
