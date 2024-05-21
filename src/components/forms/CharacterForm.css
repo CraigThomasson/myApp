@@ -2,11 +2,13 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-label {
+    align-items: center;
+  }
+  
+  label {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: flex-start;
-}
+  }
+  

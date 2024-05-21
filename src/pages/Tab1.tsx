@@ -19,8 +19,8 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <DisplayDiceResult name="Roll Dice" />
-        <NavButton to="/tab2" text='tab 2'/> 
-        <NavButton to="/tab3" text='tab 3'/> 
+        {/* <NavButton to="/tab2" text='tab 2'/> 
+        <NavButton to="/tab3" text='tab 3'/>  */}
       </IonContent>
     </IonPage>
   );

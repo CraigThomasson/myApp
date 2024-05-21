@@ -1,17 +1,27 @@
-import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import DisplayCharacterSheet from '../components/containers/DisplayCharacterSheet';
 import './Tab2.css';
+import React from 'react';
 
 const Tab2: React.FC = () => {
   return (
-    <div className="page-container">
-      <header className="page-header">
-        <h1>Character Sheet</h1>
-      </header>
-      <main className="content-container">
-        <DisplayCharacterSheet />
-      </main>
-    </div>
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Character Sheet</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Character Sheet</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <div className="center-content">
+          <DisplayCharacterSheet />
+        </div>
+      </IonContent>
+    </IonPage>
   );
 };
 
